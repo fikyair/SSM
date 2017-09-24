@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--全局配置文件的编写-->
+<configuration>
+    <!-- 参数设置 -->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.atguigu.crud.bean"/>
+    </typeAliases>
+    <!--分页插件的注册  必须饭在这里-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--使我们不可能到达一个不正确的页码，在分页显示-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
